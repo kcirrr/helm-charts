@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  vaultwarden:
+  - apiVersion: v2
+    appVersion: 1.23.0-alpine
+    created: "2021-12-03T20:35:36.727542848Z"
+    description: A Helm chart for Kubernetes
+    digest: 83a2d6dbfed7bad61c7ff74db38cca06b16dfc33ec9906b58e3c51ce198e93ee
+    name: vaultwarden
+    type: application
+    urls:
+    - https://github.com/kcirrr/helm-charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
+    version: 0.1.0
+generated: "2021-12-03T20:35:36.727548449Z"
