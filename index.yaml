@@ -14,6 +14,16 @@ entries:
   vaultwarden:
   - apiVersion: v2
     appVersion: 1.23.0
+    created: "2021-12-09T17:12:10.090143843Z"
+    description: Unofficial Bitwarden compatible server written in Rust
+    digest: 3f236c1dc73d4e45acdac2121a389d1d0ece74cbbdd1167d5e9309f99ebdf0f6
+    name: vaultwarden
+    type: application
+    urls:
+    - https://github.com/kcirrr/helm-charts/releases/download/vaultwarden-0.1.5/vaultwarden-0.1.5.tgz
+    version: 0.1.5
+  - apiVersion: v2
+    appVersion: 1.23.0
     created: "2021-12-09T16:44:34.742697673Z"
     description: Unofficial Bitwarden compatible server written in Rust
     digest: 38f39cb8c614b5f4c8b83f95858835db898c61a20297e1fb9c6f48d58f0318b8
@@ -62,4 +72,4 @@ entries:
     urls:
     - https://github.com/kcirrr/helm-charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
     version: 0.1.0
-generated: "2021-12-09T16:52:43.585770747Z"
+generated: "2021-12-09T17:12:10.090167143Z"
