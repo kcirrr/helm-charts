@@ -53,7 +53,7 @@ spec:
               value: {{ $val | quote }}
             {{- end}}
           volumeMounts:
-            - name: vaultwarden-data
+            - name: {{ include "vaultwarden.fullname" . }}-data
               mountPath: /data
       volumes:
         - name: {{ include "vaultwarden.fullname" . }}-data
