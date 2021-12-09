@@ -12,7 +12,7 @@ metadata:
 spec:
   accessModes:
     {{- range .Values.persistence.accessModes }}
-    - {{ . | quote }}
+      - {{ . | quote }}
     {{- end }}
   resources:
     requests:
