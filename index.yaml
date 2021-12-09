@@ -3,6 +3,16 @@ entries:
   freshrss:
   - apiVersion: v2
     appVersion: 1.18.1
+    created: "2021-12-09T17:22:00.968825915Z"
+    description: A free, self-hostable aggregator
+    digest: 55231f7dff106d756b6674a0108a6e751601617fd00c4f957abfca10ec3c5600
+    name: freshrss
+    type: application
+    urls:
+    - https://github.com/kcirrr/helm-charts/releases/download/freshrss-0.1.1/freshrss-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 1.18.1
     created: "2021-12-09T16:52:43.585753146Z"
     description: A free, self-hostable aggregator
     digest: 29d531ce3885d857f3386498d787cd2dafe7dfdd2cc077e6a7b2d3adc640dc2a
@@ -12,6 +22,16 @@ entries:
     - https://github.com/kcirrr/helm-charts/releases/download/freshrss-0.1.0/freshrss-0.1.0.tgz
     version: 0.1.0
   vaultwarden:
+  - apiVersion: v2
+    appVersion: 1.23.0
+    created: "2021-12-09T17:22:01.167022919Z"
+    description: Unofficial Bitwarden compatible server written in Rust
+    digest: f9e0bbc1057397aba1d27b11c8d40aab96946ae601c5603f58132805813ffd67
+    name: vaultwarden
+    type: application
+    urls:
+    - https://github.com/kcirrr/helm-charts/releases/download/vaultwarden-0.1.6/vaultwarden-0.1.6.tgz
+    version: 0.1.6
   - apiVersion: v2
     appVersion: 1.23.0
     created: "2021-12-09T17:12:10.090143843Z"
@@ -72,4 +92,4 @@ entries:
     urls:
     - https://github.com/kcirrr/helm-charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
     version: 0.1.0
-generated: "2021-12-09T17:12:10.090167143Z"
+generated: "2021-12-09T17:22:01.16705292Z"
