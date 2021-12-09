@@ -3,6 +3,16 @@ entries:
   freshrss:
   - apiVersion: v2
     appVersion: 1.18.1
+    created: "2021-12-09T20:47:56.730820532Z"
+    description: A free, self-hostable aggregator
+    digest: d0cdb21bcbd58d1b4381337600160b0ccc464f095f4f351f3cc476e60f9f2a5f
+    name: freshrss
+    type: application
+    urls:
+    - https://github.com/kcirrr/helm-charts/releases/download/freshrss-0.1.2/freshrss-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 1.18.1
     created: "2021-12-09T17:22:00.968825915Z"
     description: A free, self-hostable aggregator
     digest: 55231f7dff106d756b6674a0108a6e751601617fd00c4f957abfca10ec3c5600
@@ -92,4 +102,4 @@ entries:
     urls:
     - https://github.com/kcirrr/helm-charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
     version: 0.1.0
-generated: "2021-12-09T17:22:01.16705292Z"
+generated: "2021-12-09T20:47:56.730946234Z"
