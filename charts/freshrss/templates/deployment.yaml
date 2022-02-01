@@ -53,22 +53,17 @@ spec:
               value: {{ $val | quote }}
             {{- end}}
           volumeMounts:
-            - name: {{ include "freshrss.fullname" . }}-data
+            - name: {{ include "freshrss.fullname" . }}
               mountPath: /var/www/FreshRSS/data
-            - name: {{ include "freshrss.fullname" . }}-extensions
+              subPath: data
+            - name: {{ include "freshrss.fullname" . }}
               mountPath: /var/www/FreshRSS/extensions
+              subPath: extensions
       volumes:
-        - name: {{ include "freshrss.fullname" . }}-data
+        - name: {{ include "freshrss.fullname" . }}
         {{- if .Values.persistence.enabled }}
           persistentVolumeClaim:
-            claimName: {{ include "freshrss.fullname" . }}-data
-        {{- else }}
-          emptyDir: {}
-        {{- end }}
-        - name: {{ include "freshrss.fullname" . }}-extensions
-        {{- if .Values.persistence.enabled }}
-          persistentVolumeClaim:
-            claimName: {{ include "freshrss.fullname" . }}-extensions
+            claimName: {{ include "freshrss.fullname" . }}
         {{- else }}
           emptyDir: {}
         {{- end }}
