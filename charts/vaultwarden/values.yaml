@@ -72,7 +72,7 @@ persistence:
   storageClassName: ""
   # Persistent Volume access modes
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   # Persistent Volume size
   size: 1Gi
   # The name of an existing PVC to use for persistence
