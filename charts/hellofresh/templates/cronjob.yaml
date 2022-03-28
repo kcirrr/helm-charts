@@ -1,0 +1,64 @@
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: {{ include "hellofresh.fullname" . }}
+  labels:
+    {{- include "hellofresh.labels" . | nindent 4 }}
+spec:
+  schedule: "0 11 * * 3"
+  jobTemplate:
+    spec:
+      selector:
+        matchLabels:
+          {{- include "hellofresh.selectorLabels" . | nindent 6 }}
+      template:
+        metadata:
+          {{- with .Values.podAnnotations }}
+          annotations:
+            {{- toYaml . | nindent 8 }}
+          {{- end }}
+          labels:
+            {{- include "hellofresh.selectorLabels" . | nindent 8 }}
+        spec:
+          {{- with .Values.imagePullSecrets }}
+          imagePullSecrets:
+            {{- toYaml . | nindent 8 }}
+          {{- end }}
+          serviceAccountName: {{ include "hellofresh.serviceAccountName" . }}
+          securityContext:
+            {{- toYaml .Values.cronjob.podSecurityContext | nindent 8 }}
+          containers:
+          - name: {{ .Chart.Name }}
+            securityContext:
+              {{- toYaml .Values.cronjob.securityContext | nindent 12 }}
+            image: "{{ .Values.cronjob.image.repository }}:{{ .Values.cronjob.image.tag | default .Chart.AppVersion }}"
+            imagePullPolicy: {{ .Values.cronjob.image.pullPolicy }}
+            env:
+            - name: HELLOFRESH_ICS_PATH
+              value: {{ .Values.cronjob.icsPath | quote }}
+            - name: HELLOFRESH_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "hellofresh.fullname" . }}
+                  key: username
+            - name: HELLOFRESH_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "hellofresh.fullname" . }}
+                  key: password
+            resources:
+              {{- toYaml .Values.cronjob.resources | nindent 12 }}
+            volumeMounts:
+              - name: {{ include "hellofresh.fullname" . }}
+                mountPath: /output
+                subPath: ics
+          restartPolicy: OnFailure
+          volumes:
+            - name: {{ include "hellofresh.fullname" . }}
+            {{- if .Values.persistence.enabled }}
+              persistentVolumeClaim:
+                claimName: {{ include "hellofresh.fullname" . }}
+            {{- else }}
+              emptyDir: {}
+            {{- end }}
