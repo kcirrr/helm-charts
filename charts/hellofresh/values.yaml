@@ -80,6 +80,22 @@ ingress:
   #    hosts:
   #      - chart-example.local
 
+persistence:
+  # Enable persistence using Persistent Volume Claims
+  enabled: true
+  # Persistent Volume storage class
+  # If defined, storageClassName: <storageClass>
+  # If set to "-", storageClassName: "", which disables dynamic provisioning
+  # If undefined (the default) or set to null, no storageClassName spec is set, choosing the default provisioner
+  storageClassName: ""
+  # Persistent Volume access modes
+  accessModes:
+    - ReadWriteMany
+  # Persistent Volume size
+  size: 100Mi
+  # The name of an existing PVC to use for persistence
+  existingClaim: ""
+
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
