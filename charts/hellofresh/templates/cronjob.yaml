@@ -21,10 +21,10 @@ spec:
           labels:
             {{- include "hellofresh.selectorLabels" . | nindent 8 }}
         spec:
-          {{- with .Values.imagePullSecrets }}
-          imagePullSecrets:
-            {{- toYaml . | nindent 8 }}
-          {{- end }}
+          #{{- with .Values.imagePullSecrets }}
+          #imagePullSecrets:
+          #  {{- toYaml . | nindent 8 }}
+          #{{- end }}
           serviceAccountName: {{ include "hellofresh.serviceAccountName" . }}
           securityContext:
             {{- toYaml .Values.cronjob.podSecurityContext | nindent 8 }}
