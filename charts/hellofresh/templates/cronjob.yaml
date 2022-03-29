@@ -35,6 +35,8 @@ spec:
                 secretKeyRef:
                   name: {{ include "hellofresh.fullname" . }}
                   key: password
+            resources:
+              {{- toYaml .Values.initContainer.resources | nindent 14 }}
             securityContext:
               {{- toYaml .Values.cronjob.securityContext | nindent 14 }}
             volumeMounts:
