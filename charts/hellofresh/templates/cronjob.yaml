@@ -6,32 +6,20 @@ metadata:
   labels:
     {{- include "hellofresh.labels" . | nindent 4 }}
 spec:
-  schedule: "0 11 * * 3"
+  schedule: {{ .Values.cronjob.schedule }}
   jobTemplate:
     spec:
-      selector:
-        matchLabels:
-          {{- include "hellofresh.selectorLabels" . | nindent 6 }}
       template:
-        metadata:
-          {{- with .Values.podAnnotations }}
-          annotations:
+        spec:
+          {{- with .Values.imagePullSecrets }}
+          imagePullSecrets:
             {{- toYaml . | nindent 8 }}
           {{- end }}
-          labels:
-            {{- include "hellofresh.selectorLabels" . | nindent 8 }}
-        spec:
-          #{{- with .Values.imagePullSecrets }}
-          #imagePullSecrets:
-          #  {{- toYaml . | nindent 8 }}
-          #{{- end }}
           serviceAccountName: {{ include "hellofresh.serviceAccountName" . }}
           securityContext:
-            {{- toYaml .Values.cronjob.podSecurityContext | nindent 8 }}
+            {{- toYaml .Values.cronjob.podSecurityContext | nindent 12 }}
           containers:
           - name: {{ .Chart.Name }}
-            securityContext:
-              {{- toYaml .Values.cronjob.securityContext | nindent 12 }}
             image: "{{ .Values.cronjob.image.repository }}:{{ .Values.cronjob.image.tag | default .Chart.AppVersion }}"
             imagePullPolicy: {{ .Values.cronjob.image.pullPolicy }}
             env:
@@ -47,8 +35,8 @@ spec:
                 secretKeyRef:
                   name: {{ include "hellofresh.fullname" . }}
                   key: password
-            resources:
-              {{- toYaml .Values.cronjob.resources | nindent 12 }}
+            securityContext:
+              {{- toYaml .Values.cronjob.securityContext | nindent 14 }}
             volumeMounts:
               - name: {{ include "hellofresh.fullname" . }}
                 mountPath: /output
