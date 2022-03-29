@@ -64,6 +64,16 @@ entries:
   hellofresh:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2022-03-29T08:33:51.157361058Z"
+    description: A Helm chart for Kubernetes
+    digest: fc4e11a622db78c3ed7e1e4de7132c122b40b467d1b1cde60ad12a64ed8cdcc1
+    name: hellofresh
+    type: application
+    urls:
+    - https://github.com/kcirrr/helm-charts/releases/download/hellofresh-0.1.4/hellofresh-0.1.4.tgz
+    version: 0.1.4
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2022-03-28T22:22:46.883199683Z"
     description: A Helm chart for Kubernetes
     digest: 36731b76a76329f0b9acfc41986c6590d4a66787544ce5a97ba0383bc1154a76
@@ -213,4 +223,4 @@ entries:
     urls:
     - https://github.com/kcirrr/helm-charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
     version: 0.1.0
-generated: "2022-03-28T22:22:46.88334879Z"
+generated: "2022-03-29T08:33:51.157611858Z"
