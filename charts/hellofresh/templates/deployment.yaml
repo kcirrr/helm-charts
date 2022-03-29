@@ -30,6 +30,8 @@ spec:
           image: "{{ .Values.initContainer.image.repository }}:{{ .Values.initContainer.image.tag }}"
           imagePullPolicy: {{ .Values.initContainer.image.pullPolicy }}
           command: ["touch", "/usr/share/nginx/html/index.html"]
+          resources:
+            {{- toYaml .Values.initContainer.resources | nindent 12 }}
           securityContext:
             {{- toYaml .Values.initContainer.securityContext | nindent 12 }}
           volumeMounts:
