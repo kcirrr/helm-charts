@@ -69,10 +69,14 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
+            - name: tmp
+              mountPath: /tmp
             - name: {{ include "hellofresh.fullname" . }}
               mountPath: /usr/share/nginx/html/
               subPath: ics
       volumes:
+        - name: tmp
+          emptyDir: {}
         - name: {{ include "hellofresh.fullname" . }}
         {{- if .Values.persistence.enabled }}
           persistentVolumeClaim:
