@@ -274,4 +274,15 @@ entries:
     urls:
     - https://github.com/kcirrr/helm-charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
     version: 0.1.0
-generated: "2022-03-31T16:32:00.051483642Z"
+  whoami:
+  - apiVersion: v2
+    appVersion: v1.8.0
+    created: "2022-03-31T19:24:03.555856307Z"
+    description: A Helm chart for Kubernetes
+    digest: e54b7249a02e6b3908a9bfb89f7b72c1cf1f3841e0ed89e7d3e0693b53e2a254
+    name: whoami
+    type: application
+    urls:
+    - https://github.com/kcirrr/helm-charts/releases/download/whoami-0.1.0/whoami-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-03-31T19:24:03.556248835Z"
