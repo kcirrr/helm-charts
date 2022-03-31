@@ -152,6 +152,17 @@ entries:
     urls:
     - https://github.com/kcirrr/helm-charts/releases/download/hellofresh-0.1.0/hellofresh-0.1.0.tgz
     version: 0.1.0
+  redis:
+  - apiVersion: v2
+    appVersion: 6.2.6-alpine3.15
+    created: "2022-03-31T16:32:00.051420238Z"
+    description: A Helm chart for Kubernetes
+    digest: 07caa8429d393439224284839fd55cc2c3cc095d4f989453e82cfa604b9c5889
+    name: redis
+    type: application
+    urls:
+    - https://github.com/kcirrr/helm-charts/releases/download/redis-0.1.0/redis-0.1.0.tgz
+    version: 0.1.0
   vaultwarden:
   - apiVersion: v2
     appVersion: 1.24.0-alpine
@@ -263,4 +274,4 @@ entries:
     urls:
     - https://github.com/kcirrr/helm-charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
     version: 0.1.0
-generated: "2022-03-29T17:30:02.87461565Z"
+generated: "2022-03-31T16:32:00.051483642Z"
