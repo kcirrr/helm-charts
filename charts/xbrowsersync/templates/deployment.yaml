@@ -1,0 +1,94 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "xbrowsersync.fullname" . }}
+  labels:
+    {{- include "xbrowsersync.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  strategy:
+    type: {{ .Values.updateStrategy }}
+  selector:
+    matchLabels:
+      {{- include "xbrowsersync.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "xbrowsersync.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "xbrowsersync.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: XBROWSERSYNC_DB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "xbrowsersync.fullname" . }}
+                  key: username
+            - name: XBROWSERSYNC_DB_PWD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "xbrowsersync.fullname" . }}
+                  key: password
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          livenessProbe:
+            exec:
+              command: [ "node", "healthcheck.js" ]
+            periodSeconds: 10
+            successThreshold: 1
+            failureThreshold: 10
+            timeoutSeconds: 5
+            initialDelaySeconds: 15
+          readinessProbe:
+            exec:
+              command: [ "node", "healthcheck.js" ]
+            periodSeconds: 5
+            successThreshold: 1
+            failureThreshold: 3
+            timeoutSeconds: 5
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+            - name: varlog
+              mountPath: /var/log
+            - name: settings
+              mountPath: /usr/src/api/config/settings.json
+              subPath: settings.json
+      volumes:
+        - name: varlog
+          emptyDir: {}
+        - name: settings
+          configMap:
+            name: {{ include "xbrowsersync.fullname" . }}
+            items:
+            - key: settings.json
+              path: settings.json
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
