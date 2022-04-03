@@ -285,4 +285,15 @@ entries:
     urls:
     - https://github.com/kcirrr/helm-charts/releases/download/whoami-0.1.0/whoami-0.1.0.tgz
     version: 0.1.0
-generated: "2022-03-31T19:24:03.556248835Z"
+  xbrowsersync:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2022-04-03T19:01:42.29987947Z"
+    description: A Helm chart for Kubernetes
+    digest: f02d9ed01e6bd8d678c11bc23b78dcc41d3828193dfda90105d76160ac1a8438
+    name: xbrowsersync
+    type: application
+    urls:
+    - https://github.com/kcirrr/helm-charts/releases/download/xbrowsersync-0.1.0/xbrowsersync-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-04-03T19:01:42.299968176Z"
