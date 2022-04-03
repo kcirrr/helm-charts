@@ -152,6 +152,17 @@ entries:
     urls:
     - https://github.com/kcirrr/helm-charts/releases/download/hellofresh-0.1.0/hellofresh-0.1.0.tgz
     version: 0.1.0
+  libreddit:
+  - apiVersion: v2
+    appVersion: latest
+    created: "2022-04-03T19:39:21.589393209Z"
+    description: A Helm chart for Kubernetes
+    digest: 5a67dd35bd0cb2b1156eae6c4e5665733514e39db62cf5705d7d14245fb6a47a
+    name: libreddit
+    type: application
+    urls:
+    - https://github.com/kcirrr/helm-charts/releases/download/libreddit-0.1.0/libreddit-0.1.0.tgz
+    version: 0.1.0
   redis:
   - apiVersion: v2
     appVersion: 6.2.6-alpine3.15
@@ -296,4 +307,4 @@ entries:
     urls:
     - https://github.com/kcirrr/helm-charts/releases/download/xbrowsersync-0.1.0/xbrowsersync-0.1.0.tgz
     version: 0.1.0
-generated: "2022-04-03T19:01:42.299968176Z"
+generated: "2022-04-03T19:39:21.589707713Z"
