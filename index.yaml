@@ -165,6 +165,16 @@ entries:
     version: 0.1.0
   redis:
   - apiVersion: v2
+    appVersion: 7.0.0-alpine3.15
+    created: "2022-08-19T21:11:58.199234064Z"
+    description: A Helm chart for Kubernetes
+    digest: e8d48a82a8c0740c2e12462d6f2c28582a575bf75e88665abc4253b15e9cf7e1
+    name: redis
+    type: application
+    urls:
+    - https://github.com/kcirrr/helm-charts/releases/download/redis-0.1.1/redis-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
     appVersion: 6.2.6-alpine3.15
     created: "2022-03-31T16:32:00.051420238Z"
     description: A Helm chart for Kubernetes
@@ -307,4 +317,4 @@ entries:
     urls:
     - https://github.com/kcirrr/helm-charts/releases/download/xbrowsersync-0.1.0/xbrowsersync-0.1.0.tgz
     version: 0.1.0
-generated: "2022-04-03T19:39:21.589707713Z"
+generated: "2022-08-19T21:11:58.199312765Z"
