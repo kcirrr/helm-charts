@@ -8,7 +8,7 @@ image:
   repository: traefik/whoami
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "v1.8.1"
 
 imagePullSecrets: []
 nameOverride: ""

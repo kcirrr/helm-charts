@@ -7,7 +7,7 @@ replicaCount: 1
 image:
   repository: nginxinc/nginx-unprivileged
   pullPolicy: Always
-  tag: 1.21.6-alpine
+  tag: 1.23.1-alpine
 
 cronjob:
   schedule: "0 11 * * 3"
@@ -19,7 +19,7 @@ cronjob:
   image:
     repository: ghcr.io/rondie/hellofresh-delivery-ics
     pullPolicy: Always
-    tag: sha-9f1eef7
+    tag: "sha-dd37d93"
 
   podSecurityContext:
     fsGroup: 1000
