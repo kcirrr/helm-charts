@@ -2,6 +2,16 @@ apiVersion: v1
 entries:
   freshrss:
   - apiVersion: v2
+    appVersion: 1.19.2
+    created: "2022-08-27T17:57:19.914266164Z"
+    description: A free, self-hostable aggregator
+    digest: 820d37fe81f34e287c0b28b2485a56bd581c8c0a75c2a22791557f1200d27ca2
+    name: freshrss
+    type: application
+    urls:
+    - https://github.com/kcirrr/helm-charts/releases/download/freshrss-0.1.6/freshrss-0.1.6.tgz
+    version: 0.1.6
+  - apiVersion: v2
     appVersion: 1.19.1
     created: "2022-03-21T23:16:30.200871305Z"
     description: A free, self-hostable aggregator
@@ -62,6 +72,16 @@ entries:
     - https://github.com/kcirrr/helm-charts/releases/download/freshrss-0.1.0/freshrss-0.1.0.tgz
     version: 0.1.0
   hellofresh:
+  - apiVersion: v2
+    appVersion: sha-dd37d93
+    created: "2022-08-27T17:57:20.153647045Z"
+    description: A Helm chart for Kubernetes
+    digest: b7ed4e5bf6c507b451461a5a41478f2f25ea63ee1bebbd4cf07de7f538a71a75
+    name: hellofresh
+    type: application
+    urls:
+    - https://github.com/kcirrr/helm-charts/releases/download/hellofresh-0.1.9/hellofresh-0.1.9.tgz
+    version: 0.1.9
   - apiVersion: v2
     appVersion: 1.0.0
     created: "2022-03-29T17:30:02.874534652Z"
@@ -164,6 +184,16 @@ entries:
     - https://github.com/kcirrr/helm-charts/releases/download/libreddit-0.1.0/libreddit-0.1.0.tgz
     version: 0.1.0
   redis:
+  - apiVersion: v2
+    appVersion: 7.0.4-alpine3.16
+    created: "2022-08-27T17:57:20.402585425Z"
+    description: A Helm chart for Kubernetes
+    digest: 80c15afe6a8aab3b8f7831ac9c703ce41d99db992c9f1b71093b81b90cb5c1f2
+    name: redis
+    type: application
+    urls:
+    - https://github.com/kcirrr/helm-charts/releases/download/redis-0.1.2/redis-0.1.2.tgz
+    version: 0.1.2
   - apiVersion: v2
     appVersion: 7.0.0-alpine3.15
     created: "2022-08-19T21:11:58.199234064Z"
@@ -307,6 +337,16 @@ entries:
     version: 0.1.0
   whoami:
   - apiVersion: v2
+    appVersion: v1.8.1
+    created: "2022-08-27T17:57:20.665633099Z"
+    description: A Helm chart for Kubernetes
+    digest: 6bd2dd61b7f336756d966053ffcf7330a0a9cb16869481eb12d72d39af068849
+    name: whoami
+    type: application
+    urls:
+    - https://github.com/kcirrr/helm-charts/releases/download/whoami-0.1.1/whoami-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
     appVersion: v1.8.0
     created: "2022-03-31T19:24:03.555856307Z"
     description: A Helm chart for Kubernetes
@@ -327,4 +367,4 @@ entries:
     urls:
     - https://github.com/kcirrr/helm-charts/releases/download/xbrowsersync-0.1.0/xbrowsersync-0.1.0.tgz
     version: 0.1.0
-generated: "2022-08-23T20:18:40.273092046Z"
+generated: "2022-08-27T17:57:20.665991706Z"
